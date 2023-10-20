@@ -1,0 +1,111 @@
+﻿@model IEnumerable<LibraryMGMT.Models.Author>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the page header */
+        h1 {
+            color: black; /* Blue text color */
+        }
+
+        /* Style for the "Create New" link */
+        .create-button {
+            text-decoration: none;
+            color: white; /* Green text color */
+            background-color: #007BFF; /* Blue background color */
+            padding: 5px 10px; /* Add padding */
+            border: 2px solid #007BFF; /* Blue border */
+            border-radius: 5px; /* Add border radius */
+        }
+
+            .create-button:hover {
+                color: white; /* White text color on hover */
+                background-color: #0056b3; /* Slightly different shade of blue on hover */
+            }
+
+
+        /* Style for the table */
+        /* Style for the table */
+        table.table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+        }
+
+        /* Style for table header row */
+        th {
+            background-color: #343a40; /* Dark background color */
+            color: #ffc107; /* Yellow text color */
+        }
+
+        /* Style for alternating table rows */
+
+
+        /* Style for table cell content */
+        td {
+            padding: 10px; /* Add cell padding */
+        }
+
+        /* Style for links in button form */
+        a.button-link {
+            text-decoration: none;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 2px solid; /* Dark orange border */
+            color: black; /* Dark orange text */
+            background-color: lightsteelblue; /* Transparent background */
+            border-radius: 5px; /* Add border radius */
+            transition: background-color 0.3s, color 0.3s; /* Smooth color transition on hover */
+        }
+
+            a.button-link:hover {
+                background-color: #007BFF; /* Blue background color on hover */
+                color: #fff; /* White text color on hover */
+            }
+
+    </style>
+</head>
+<body>
+    <h1>Index</h1>
+    <p>
+        <a asp-action="Create" class="create-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+            </svg> &nbsp; Create New
+        </a>
+    </p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                        <a asp-action="Edit" asp-route-id="@item.AuthorId" class="button-link">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.AuthorId" class="button-link">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.AuthorId" class="button-link">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

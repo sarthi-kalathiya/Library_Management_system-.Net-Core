@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        
+            
+        <style >
+
+        body {
+          /*  background-image: url('https://t3.ftcdn.net/jpg/03/26/04/60/360_F_326046017_jHGB1tbXAT0KB732CuKvTXxxzqxy31wd.jpg');*/
+          /*  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjXDscw1kDL5zNExQnAQF-Nj1NNC43cNkL6A&usqp=CAU');*/
+            background-image: url('https://media.istockphoto.com/id/1217642566/vector/library-vector-background-pile-books-open-textbook-cup-of-coffee-and-plant-locate-on-wooden.jpg?s=612x612&w=0&k=20&c=kkETV6-jDSPqzBHlVoiunz8o8Fn378ozoNTBo0XHNSQ=');
+            background-size: cover; /* This will make the image cover the entire page */
+            background-repeat: no-repeat; /* Prevent image from repeating */
+        }
+
+
+        .login-partial {
+            color: blue !important;
+        }
+
+        .head1 {
+            margin-top: 100px;
+            color: #000099;
+        }
+
+        .head2{
+            margin-top : 30px;
+            color: #003300;
+        }
+
+        /* Center the links horizontally */
+        .c1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 60px;
+        }
+
+        /* Style the links as buttons */
+        ul.c1 li.nav-item {
+            margin: 0 10px;
+        }
+
+            ul.c1 li.nav-item a {
+                display: inline-block;
+                padding: 10px 20px;
+               /* background-color: #99ddff;*/
+                background-color: #809fff;
+                color: #000; /* Set the initial text color to black */
+                border: 2px solid none ;
+                border-radius: 5px;
+                text-decoration: none;
+                text-align: center;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                ul.c1 li.nav-item a:hover {
+                    background-color: #3399ff;
+                    color: #fff !important; /* Change text color to white on hover */
+                }
+    </style>
+
+
+              
+        </style>
+    </head>
+<body>
+
+   
+<div class="text-center">
+
+        <h1 class="head1"> Welcome to the Reading Revolution</h1>
+        <h2 class="head2">"Where Stories Spark Innovation"</h2>
+
+        <ul class="navbar-nav d-flex flex-row c1">
+            <li class="nav-item mx-2">
+                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Authors" asp-action="Index">Authors</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Books" asp-action="Index">Books</a>
+            </li>
+            <li class="nav-item mx-2">
+                <a class="nav-link text-dark fw-bold" asp-area="" asp-controller="Borrows" asp-action="Index">Borrows</a>
+            </li>
+        </ul>
+
+</div>
+</body>
+</html>

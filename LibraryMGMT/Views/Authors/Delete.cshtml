@@ -1,0 +1,65 @@
+﻿@model LibraryMGMT.Models.Author
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the container */
+        .container {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style for headings */
+        h1, h3, h4 {
+            color: #ffc107; /* Yellow text */
+        }
+
+        /* Style for labels and data */
+        .col-sm-2, .col-sm-10 {
+            color: white; /* White text */
+        }
+
+        /* Style for buttons */
+        .btn-danger {
+            background-color: #dc3545; /* Red background */
+            color: white; /* White text */
+        }
+
+        .btn-secondary:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+ 
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="AuthorId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </form>
+</div>
+</body>
+</html>
+

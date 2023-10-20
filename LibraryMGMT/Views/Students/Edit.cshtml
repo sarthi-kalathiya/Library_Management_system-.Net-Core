@@ -1,0 +1,105 @@
+﻿@model LibraryMGMT.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the container */
+        .container {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Style for headings */
+        h1, h4 {
+            color: #ffc107; /* Yellow text */
+        }
+
+        /* Style for labels */
+        .control-label {
+            color: white;
+        }
+
+        /* Style for input fields */
+        .form-control {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            margin-bottom: 30px; /* Add space between input fields and labels */
+        }
+
+        /* Style for validation error messages */
+        .text-danger {
+            color: #dc3545; /* Red text */
+        }
+
+       
+ .btn-primary {
+            text-decoration: none;
+            color: white; /* Blue text color */
+            background-color: #007BFF; /* Blue background color */
+            padding: 5px 10px; /* Add padding */
+            margin-right: 10px;
+            border: 2px solid #007BFF; /* Blue border */
+            border-radius: 5px; /* Add border radius */
+        }
+
+            .btn-primary:hover {
+                color: #fff; /* White text color on hover */
+                background-color: #0056b3; /* Slightly different shade of blue on hover */
+            }
+
+            .btn-secondary:hover{
+            background-color: darkgray;
+            }
+
+            .btn.btn-secondary {
+                margin-top: 10px; /* Add space to the left of the button */
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Student</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="StudentId" />
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Gender" class="control-label"></label>
+                        <input asp-for="Gender" class="form-control" />
+                        <span asp-validation-for="Gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Course" class="control-label"></label>
+                        <input asp-for="Course" class="form-control" />
+                        <span asp-validation-for="Course" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</body>
+</html>

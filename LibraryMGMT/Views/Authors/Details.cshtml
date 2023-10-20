@@ -1,0 +1,79 @@
+﻿@model LibraryMGMT.Models.Author
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style for the header */
+        h1 {
+            color: #ffc107; /* Yellow text color */
+        }
+
+        /* Style for the container */
+        .container {
+            background-color: #000; /* Black background color */
+            color: #fff; /* White text color */
+            padding: 20px; /* Add some padding */
+        }
+
+        dt {
+            color: #ffc107; /* Yellow text color */
+        }
+
+
+        /* Style for the separator line */
+        hr {
+            border: 2px solid #ffc107; /* Yellow line color */
+        }
+
+        /* Style for the action links */
+        .btn-primary {
+            text-decoration: none;
+            color: white; /* Blue text color */
+            background-color: #007BFF; /* Blue background color */
+            padding: 5px 10px; /* Add padding */
+            margin-right: 10px;
+            border: 2px solid #007BFF; /* Blue border */
+            border-radius: 5px; /* Add border radius */
+        }
+
+            .btn-primary:hover {
+                color: #fff; /* White text color on hover */
+                background-color: #0056b3; /* Slightly different shade of blue on hover */
+            }
+
+        .btn-secondary:hover {
+            background-color: darkgray;
+        }
+
+        .btn.btn-secondary {
+            margin-left: 10px; /* Add space to the left of the button */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Author Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+</div>
+<div>
+        <a asp-action="Edit" asp-route-id="@Model?.AuthorId" class="btn btn-primary">Edit</a> |
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+</body>
+</html>
