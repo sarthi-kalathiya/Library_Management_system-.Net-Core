@@ -23,7 +23,7 @@ Before you start, make sure you have the following software and dependencies ins
 ### Clone the Repository
 1. **Clone the Repository**: Open your terminal or command prompt and navigate to your desired project directory. Use the following command to clone the repository:
    ```bash
-   git clone https://github.com/yourusername/library-management-system.git
+   git clone https://github.com/sarthi-kalathiya/Library_Management_system-.Net-Core.git
 2. **Set Up the Database**:
 - Create a Database: Create a new database using your preferred database management system (e.g., SQL Server).
 - Configure Connection String: In the project's appsettings.json file, update the connection string to match the details of your newly created database
